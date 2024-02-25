@@ -33,7 +33,7 @@ export default function App(){
         setQuestionsArray(questions.results.map(question => {
             const answersArray = []
             answersArray.push({
-                answer: question.correct_answer,
+                answer: decode(question.correct_answer),
                 isCorrect: true,
                 isChecked: false,
                 id: nanoid(),
@@ -41,7 +41,7 @@ export default function App(){
             })
             for(let incorrect_answer of question.incorrect_answers){
                 answersArray.push({
-                    answer: incorrect_answer,
+                    answer: decode(incorrect_answer),
                     isCorrect: false,
                     isChecked: false,
                     id: nanoid(),
