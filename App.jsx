@@ -9,6 +9,7 @@ export default function App(){
     const [questionsArray, setQuestionsArray] = React.useState()
     const [rightAnswers, setRightAnswers] = React.useState(0)
     const [showAnswers, setShowAnswers] = React.useState(false)
+    const [playNumbers, setPlayNumbers] = React.useState(0)
     
     React.useEffect(() => {
         fetch("https://opentdb.com/api.php?amount=5")
@@ -16,7 +17,7 @@ export default function App(){
             .then(data => {
                 SetQuestions(data)
             })
-    }, [])
+    }, [playNumbers])
     
     const shuffle = array => {
                 for(let i = array.length - 1; i>0; i--){
@@ -129,6 +130,7 @@ export default function App(){
     function playAgain(){
         setShowStart(false)
         setShowAnswers(false)
+        setPlayNumbers(previousValue => previousValue + 1)
         console.log("Hey")
         showContent()
     }
