@@ -17,6 +17,7 @@ export default function App(){
             .then(data => {
                 SetQuestions(data)
             })
+        console.log("Hey")
     }, [playNumbers])
     
     const shuffle = array => {
@@ -128,12 +129,10 @@ export default function App(){
     }
     
     function playAgain(){
+        setPlayNumbers(previousValue => previousValue + 1)
         setShowStart(false)
         setShowAnswers(false)
         setRightAnswers(0)
-        setPlayNumbers(previousValue => previousValue + 1)
-        console.log("Hey")
-        showContent()
     }
     if(!showStart){
         return(
@@ -159,3 +158,4 @@ export default function App(){
          )
     }
 }
+
