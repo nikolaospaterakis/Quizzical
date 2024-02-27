@@ -133,7 +133,7 @@ export default function App(){
         setRightAnswers(0)
         setPlayNumbers(previousValue => previousValue + 1)
         console.log("Hey")
-        setTimeout(showContent(), 1000)
+        setTimeout(showContent, 1000)
     }
     if(!showStart){
         return(
