@@ -132,7 +132,7 @@ export default function App(){
         setShowStart(false)
         setShowAnswers(false)
         setRightAnswers(0)
-        playNumbers++
+        playNumbers = playNumbers + 1
         console.log("Hey")
         showContent()
     }
