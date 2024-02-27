@@ -9,7 +9,8 @@ export default function App(){
     const [questionsArray, setQuestionsArray] = React.useState()
     const [rightAnswers, setRightAnswers] = React.useState(0)
     const [showAnswers, setShowAnswers] = React.useState(false)
-    const [playNumbers, setPlayNumbers] = React.useState(0)
+   
+    const playNumbers = 0
     
     React.useEffect(() => {
         fetch("https://opentdb.com/api.php?amount=5")
@@ -131,7 +132,7 @@ export default function App(){
         setShowStart(false)
         setShowAnswers(false)
         setRightAnswers(0)
-        setPlayNumbers(previousValue => previousValue + 1)
+        playNumbers++
         console.log("Hey")
         showContent()
     }
