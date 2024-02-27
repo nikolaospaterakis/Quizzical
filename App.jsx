@@ -130,6 +130,7 @@ export default function App(){
     function playAgain(){
         setShowStart(false)
         setShowAnswers(false)
+        setRightAnswers(0)
         setPlayNumbers(previousValue => previousValue + 1)
         console.log("Hey")
         showContent()
